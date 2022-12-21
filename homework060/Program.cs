@@ -9,3 +9,71 @@
 26(1,0,1) 55(1,1,1)
 */
 
+int GetNumber(string message)
+{
+   int result = 0;
+   while (true)
+   {
+      Console.WriteLine(message);
+      if (int.TryParse(Console.ReadLine(), out result) && result > 0)
+      {
+         break;
+      }
+      else
+      {
+         Console.WriteLine("Ввели не число");
+      }
+   }
+   return result;
+}
+
+int[,,] GetMatrix(int m, int n, int k)
+{
+
+   int[] r = new int[m * n * k];
+   int temp;
+   for (int i = 0; i < r.Length; i++)
+   {
+      
+   }
+
+
+   int[,,] matrix = new int[m, n, k];
+   Random rnd = new Random();
+   for (int i = 0; i < matrix.GetLength(0); i++)
+   {
+      for (int j = 0; j < matrix.GetLength(1); j++)
+      {
+         for (int z = 0; z < matrix.GetLength(2); z++)
+         {
+            matrix[i, j, z] = rnd.Next(10, 100);
+
+
+         }
+      }
+   }
+   return matrix;
+}
+
+void PrintMatrix(int[,,] matrix)
+{
+   for (int i = 0; i < matrix.GetLength(0); i++)
+   {
+      for (int j = 0; j < matrix.GetLength(1); j++)
+      {
+         Console.WriteLine();
+         for (int z = 0; z < matrix.GetLength(2); z++)
+         {
+            Console.Write($"{matrix[i, j, z]} ({i},{j},{z})  ");
+         }
+      }
+   }
+}
+
+int m = GetNumber("Введите X размер матрицы");
+int n = GetNumber("Введите Y размер матрицы");
+int k = GetNumber("Введите Z размер матрицы");
+
+int[,,] matrix = GetMatrix(m, n, k);
+
+PrintMatrix(matrix);

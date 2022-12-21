@@ -10,7 +10,6 @@
 с наименьшей суммой элементов: 1 строка
 */
 
-// получить числа с консоли
 int GetNumber(string message)
 {
    int result = 0;
@@ -29,7 +28,6 @@ int GetNumber(string message)
    return result;
 }
 
-// задать матрицу и заполнить ее числами
 int[,] GetMatrix(int m, int n)
 {
    int[,] matrix = new int[m, n];
@@ -44,7 +42,6 @@ int[,] GetMatrix(int m, int n)
    return matrix;
 }
 
-// распечатать матрицу
 void PrintMatrix(int[,] matrix)
 {
    Console.WriteLine();

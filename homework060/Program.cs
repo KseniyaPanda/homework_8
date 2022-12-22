@@ -29,26 +29,15 @@ int GetNumber(string message)
 
 int[,,] GetMatrix(int m, int n, int k)
 {
-
-   int[] r = new int[m * n * k];
-   int temp;
-   for (int i = 0; i < r.Length; i++)
-   {
-      
-   }
-
-
    int[,,] matrix = new int[m, n, k];
-   Random rnd = new Random();
+   Random rnd = new Random((int)DateTime.Now.Ticks);
    for (int i = 0; i < matrix.GetLength(0); i++)
    {
       for (int j = 0; j < matrix.GetLength(1); j++)
       {
          for (int z = 0; z < matrix.GetLength(2); z++)
          {
-            matrix[i, j, z] = rnd.Next(10, 100);
-
-
+            matrix[i, j, z] = rnd.Next(100, 1000);
          }
       }
    }
@@ -65,6 +54,7 @@ void PrintMatrix(int[,,] matrix)
          for (int z = 0; z < matrix.GetLength(2); z++)
          {
             Console.Write($"{matrix[i, j, z]} ({i},{j},{z})  ");
+            //Console.Write($"{matrix[i, j, z]},");
          }
       }
    }
